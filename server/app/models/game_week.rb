@@ -1,0 +1,2 @@
+class GameWeek < ApplicationRecord
+end
