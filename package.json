@@ -1,0 +1,13 @@
+{
+  "name": "the-league",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server && rake start ",
+    "install": "cd client && npm install &&  cd ../server && bundle install"
+  },
+  "author": "Zuri Hunter",
+  "license": "ISC"
+}
