@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  teams[]: MyText
+  teams: MyText
   season_year: MyString
   week_number: MyString
 
 two:
-  teams[]: MyText
+  teams: MyText
   season_year: MyString
   week_number: MyString

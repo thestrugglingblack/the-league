@@ -20,5 +20,5 @@ Since I was able to formulate words my large family would get together on Sunday
 
 # Getting Started
 The client side of the application is built in React.js using the Facebook's create-react-app utility and the server is built in Rails.  To spin up the application do the following:
-- npm install
-- npm start
+- `npm install`
+- `npm start`
