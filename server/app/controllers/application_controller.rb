@@ -54,4 +54,3 @@ class ApplicationController < ActionController::Base
              serializer: ActiveModel::Serializer::ErrorSerializer
     end
   end
-end
