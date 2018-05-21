@@ -5,16 +5,9 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <div className="sidenav">
-          <div className="logo">
-            <Link to="/dashboard"><h1>DigiPay</h1></Link>
-          </div>
-          <ul>
-            <li>
-              <Link to="/reports">Reports</Link>
-
-            </li>
-          </ul>
+        <div>
+          <Link to="/">Home</Link>
+          <Link to="/user">Account</Link>
         </div>
       </div>
     );
