@@ -9,5 +9,8 @@
     "install": "cd client && npm install &&  cd ../server && bundle install"
   },
   "author": "Zuri Hunter",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "react-redux": "^5.0.7"
+  }
 }
