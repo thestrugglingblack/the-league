@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import { NotFound } from '../components/errors/notfound'
 import Navbar from '../components/navbar/navbar';
@@ -15,7 +17,7 @@ const mapStateToProps = state => ({
 
 class App extends Component {
   render() {
-    console.log("Props", this.props);
+    console.log("Props", this);
       if (!this.props.authorized){ return (<Auth/>) }
        else {
         return (
@@ -35,5 +37,10 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  authorized: PropTypes.bool.isRequired
+};
+
+App = connect(mapStateToProps, null)(App);
 
 export default App;

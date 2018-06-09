@@ -15,7 +15,6 @@ const user = (state = defaultState, action) => {
       return {
         ...state,
         error: null,
-        isAuthorized: true
       }
 
     case UserActions.USER_SIGNUP:
@@ -29,7 +28,8 @@ const user = (state = defaultState, action) => {
       return {
         ...state,
         error: null,
-        userInformation: action.userInformation
+        userInformation: action.userInformation,
+        isAuthorized: true
       }
     case UserActions.AUTH_ERROR:
       return {
