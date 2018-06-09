@@ -7,28 +7,31 @@ import User from '../components/user';
 import Dashboard from '../components/dashboard';
 import Auth from '../components/auth';
 
+const mapStateToProps = state => ({
+  authorized: true
+})
 
 class App extends Component {
-  const mapStateToProps = state => ({
-    authorized: false
-  })
   render() {
-    return (
-
-      if(!this.state.authorized === false){ return ( <Auth/>)}
-      <div>
-          <Navbar/>
-          <div className="">
-            <Switch>
-              <Route exact path='/' component={Dashboard}/>
-              <Route exact path='/user' component={User}/>
-              <Route exact path='/authorization' component={Auth}/>
-              <Route component={NotFound} />
-            </Switch>
+    console.log("Props", this.props);
+      if (this.props.authorized){ return (<Auth/>) }
+       else {
+        return (
+          <div>
+              <Navbar/>
+              <div className="">
+                <Switch>
+                  <Route exact path='/' component={Dashboard}/>
+                  <Route exact path='/user' component={User}/>
+                  <Route exact path='/authorization' component={Auth}/>
+                  <Route component={NotFound} />
+                </Switch>
+              </div>
           </div>
-      </div>
-    );
+        );
+    }
   }
 }
+
 
 export default App;

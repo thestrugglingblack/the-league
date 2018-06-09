@@ -12,5 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "react-redux": "^5.0.7"
+  },
+  "dependencies": {
+    "keymirror": "^0.1.1"
   }
 }

@@ -9,7 +9,7 @@ const makeRequest( path, options = {} ){
   }
 
   if(!options.method) params.method = 'GET';
-  return fetch("htttps://localhost:3000"+ path).then(response => {
+  return fetch("https://localhost:3000"+ path).then(response => {
     if(!response.ok){
       return response.json().then(message => {
         throw new Error(`Server error: ${response.statusText || response.status},\n${message && JSON.stringify(message, null,2)}`)
@@ -26,6 +26,11 @@ export const createUser = () =>{
 
 export const getUser = () => {
   console.log("Getting User");
+  return {
+    email_address: "test@test.com",
+    first_name: "firstTest",
+    last_name: "lastTest"
+  }
 }
 
 export const updateUser = () => {
