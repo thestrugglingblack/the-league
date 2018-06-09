@@ -7,14 +7,16 @@ import User from '../components/user';
 import Dashboard from '../components/dashboard';
 import Auth from '../components/auth';
 
+import UserSelectors from '../store/user/selectors'
+
 const mapStateToProps = state => ({
-  authorized: true
+  authorized: UserSelectors.getIsAuthorized(state)
 })
 
 class App extends Component {
   render() {
     console.log("Props", this.props);
-      if (this.props.authorized){ return (<Auth/>) }
+      if (!this.props.authorized){ return (<Auth/>) }
        else {
         return (
           <div>

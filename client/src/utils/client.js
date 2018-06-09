@@ -1,5 +1,5 @@
 //default request
-const makeRequest( path, options = {} ){
+const makeRequest = ( path, options = {} ) => {
   const params = {
     headers: {
       'Content-Type': 'application/json',

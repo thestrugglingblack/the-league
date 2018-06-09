@@ -21,13 +21,13 @@ const userSignIn = () => ({
 })
 
 //UserInformation
-const setUserInformation = (userInformation) => ({
+const setUserInformation = ({userInformation}) => ({
   type: UserActions.SET_USER_INFORMATION,
   userInformation
 })
 
 //Error
-const authError = (errorMsg) => ({
+const authError = ({errorMsg}) => ({
   type: UserActions.AUTH_ERROR,
   errorMsg
 })
@@ -38,33 +38,38 @@ export const userSignOut = () => ({
 })
 
 //SetLoading
-export const setLoading = (loading) => ({
+export const setLoading = ({loading}) => ({
   type: UserActions.SET_LOADING,
   loading
 })
 
 
-export userSigningIn = () => {
+export const userSigningIn = () => {
   return async dispatch => {
     try {
       dispatch(setLoading({ loading: true }))
+
         // Find User Base off of EmailAddress, ID, Password
         const userInformation = await getUser()
+
         //If Found set the user details associated first_name, last_name, email_address, id
         return dispatch( setUserInformation({ userInformation }))
+
       } catch (e) {
         console.error("Something went wrong during authentication: ", e)
+
         //If Not Found set say erorr and recommend signing up
-        return dispath(authError({ e }))
+        return dispatch(authError({ e }))
       }
     }
 }
 
-export userSigningUp = () => {
-  return try {
+export const userSigningUp = () => {
+  return async dispatch => {
+    try {
 
-  } catch (e) {
+      } catch (e) {
 
-  }
-
+      }
+    }
 }
