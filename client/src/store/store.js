@@ -3,6 +3,8 @@ import { createLogger } from 'redux-logger';
 import { routerReducer as router, routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
+import { history } from '../utils/urlhistory';
+
 import user from './user/reducers';
 
 //Combine all reducers of application
@@ -13,7 +15,8 @@ const rootReducer = combineReducers({
 
 // Middlewares
 const middlewares = [
-  thunk
+  thunk,
+  routerMiddleware(history),
 ];
 
 let composeEnhancers = compose;

@@ -12,7 +12,8 @@ import Auth from '../components/auth';
 import UserSelectors from '../store/user/selectors'
 
 const mapStateToProps = state => ({
-  authorized: UserSelectors.getIsAuthorized(state)
+  authorized: UserSelectors.getIsAuthorized(state),
+  location: state.router.location
 })
 
 class App extends Component {
@@ -24,10 +25,10 @@ class App extends Component {
           <div>
               <Navbar/>
               <div className="">
-                <Switch>
+                <Switch  location={this.props.location}>
                   <Route exact path='/' component={Dashboard}/>
                   <Route exact path='/user' component={User}/>
-                  <Route exact path='/authorization' component={Auth}/>
+                  {/*<Route exact path='/authorization' component={Auth}/>*/}
                   <Route component={NotFound} />
                 </Switch>
               </div>

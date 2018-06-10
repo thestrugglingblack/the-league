@@ -5,14 +5,16 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import store from './store/store';
 
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+
+import { history } from './utils/urlhistory';
 import App from './components/App';
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <Router history={history}>
       <App />
-    </BrowserRouter>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
