@@ -7,7 +7,7 @@ class Navbar extends Component {
       <div>
         <div>
           <Link to="/">Home</Link>
-          <Link to="/user">Account</Link>
+          <Link to="/account">Account</Link>
         </div>
       </div>
     );

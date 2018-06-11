@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Router } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -18,20 +18,22 @@ const mapStateToProps = state => ({
 
 class App extends Component {
   render() {
-    console.log("Props", this);
+    console.log("router", this);
       if (!this.props.authorized){ return (<Auth/>) }
        else {
         return (
           <div>
+            {/*<Router>*/}
               <Navbar/>
               <div className="">
                 <Switch  location={this.props.location}>
                   <Route exact path='/' component={Dashboard}/>
-                  <Route exact path='/user' component={User}/>
+                  <Route exact path='/account' component={User}/>
                   {/*<Route exact path='/authorization' component={Auth}/>*/}
                   <Route component={NotFound} />
                 </Switch>
               </div>
+            {/*</Router>*/}
           </div>
         );
     }
