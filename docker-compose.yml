@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+
+  client:
+    build:
+      context: client/
+    volumes:
+      - "./client/:/client/"
+    links:
+      - api
+      - nfl-api
+
+  api:
+    build:
+      context: api/
+    volumes:
+      - "./api/:/api/"
+    links:
+      - db
+      - nfl-api
+    environment:
+      - DB_HOST=postgres
+      - DB_PASS=postgres
+      - DB_USER=postgres
+      - RAILS_ENV=development
+
+  nfl-api:
+    build:
+      context: nfl-api/
+    volumes:
+      - "./nfl-api/:/api/"
+
+  db:
+    build:
+      context: db/
+    command: postgres -c config_file=/tmp/postgresql/postgresql.conf

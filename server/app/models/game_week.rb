@@ -1,2 +1,0 @@
-class GameWeek < ApplicationRecord
-end
